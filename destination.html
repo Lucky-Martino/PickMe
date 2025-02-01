@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickMe - Random Destination</title>
+    <link rel="icon" type="image/x-icon" href="PickME ico.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="destination-page">
+    <div id="particles-js"></div>
+    
+    <div class="destination-container">
+        <div class="destination-header">
+            <h1>Random Destination Explorer</h1>
+            <p>Discover amazing destinations around the world!</p>
+        </div>
+
+        <div class="destination-controls">
+            <div class="destination-options">
+                <label for="destinationType">What would you like to explore?</label>
+                <select id="destinationType" class="destination-select">
+                    <option value="countries">Countries</option>
+                    <option value="cities">Cities</option>
+                    <option value="places">Places</option>
+                </select>
+            </div>
+            <button id="pickButton" class="pick-button">
+                <i class="fas fa-globe-americas"></i>
+                Explore Now!
+            </button>
+        </div>
+
+        <div id="destinationResult" class="destination-result">
+            <div id="destinationCard" class="destination-card hidden">
+                <div class="destination-info-scroll">
+                    <div class="destination-info">
+                        <h2 id="destinationName"></h2>
+                        <div class="destination-meta">
+                            <span id="destinationTypeSpan" class="meta-tag"></span>
+                            <span id="destinationRegion" class="meta-tag"></span>
+                        </div>
+                        <div class="destination-details">
+                            <div class="detail-item">
+                                <i class="fas fa-info-circle"></i>
+                                <p id="destinationDescription"></p>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-landmark"></i>
+                                <p id="destinationHighlights"></p>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <p id="destinationAttractions"></p>
+                            </div>
+                        </div>
+                        <div class="destination-actions">
+                            <a id="learnMore" href="#" target="_blank" class="action-button">
+                                <i class="fas fa-external-link-alt"></i>
+                                Learn More
+                            </a>
+                            <button id="shareButton" class="action-button">
+                                <i class="fas fa-share-alt"></i>
+                                Share
+                            </button>
+                            <button id="pickAgain" class="action-button secondary">
+                                <i class="fas fa-redo"></i>
+                                Pick Another
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Share Modal -->
+        <div id="shareModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Share This Destination</h3>
+                    <button id="closeShareModal" class="close-button">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="share-options">
+                        <button class="share-button" data-platform="facebook">
+                            <i class="fab fa-facebook"></i>
+                            Facebook
+                        </button>
+                        <button class="share-button" data-platform="twitter">
+                            <i class="fab fa-twitter"></i>
+                            Twitter
+                        </button>
+                        <button class="share-button" data-platform="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </button>
+                        <button id="copyLink" class="share-button">
+                            <i class="fas fa-link"></i>
+                            Copy Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="pickSound" src="sounds/whoosh.mp3" preload="auto"></audio>
+    <audio id="revealSound" src="sounds/reveal.mp3" preload="auto"></audio>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="destination.js"></script>
+
+    <!-- Share Modal -->
+<div id="shareModal" class="modal">
+    <!-- Modal content will be dynamically inserted here -->
+</div>
+</body>
+</html>

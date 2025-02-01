@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickMe - Home</title>
+    <link rel="icon" type="image/x-icon" href="PickME ico.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="button-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="home-page">
+    <div class="logo-container">
+        <img src="logo.png" alt="PickMe Logo" class="logo animated-logo">
+    </div>
+    <nav class="home-nav">
+        <div class="nav-buttons">
+            <a href="pick.html" class="nav-button" data-type="lucky">
+                <div class="nav-icon-wrapper">
+                    <i class="fas fa-star"></i>
+                </div>
+                <span>Lucky Draw</span>
+            </a>
+            <a href="number.html" class="nav-button" data-type="number">
+                <div class="nav-icon-wrapper">
+                    <i class="fas fa-dice"></i>
+                </div>
+                <span>Random Number</span>
+            </a>
+            <a href="password.html" class="nav-button" data-type="password">
+                <div class="nav-icon-wrapper">
+                    <i class="fas fa-key"></i>
+                </div>
+                <span>Password Generator</span>
+            </a>
+            <a href="dice.html" class="nav-button" data-type="dice">
+                <div class="nav-icon-wrapper">
+                    <i class="fas fa-dice-d6"></i>
+                </div>
+                <span>Roll Dice</span>
+            </a>
+            <a href="team.html" class="nav-button" data-type="group">
+                <div class="nav-icon-wrapper">
+                    <i class="fas fa-users"></i>
+                </div>
+                <span>Create Teams</span>
+            </a>
+            <a href="destination.html" class="nav-button" data-type="destination">
+                <div class="nav-icon-wrapper">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <span>Random Destination</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> Settings</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h3>Language</h3>
+                    <select id="languageSelect" class="language-select">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content about-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-info-circle"></i> About</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="about-content">
+                    <div class="developer-info">
+                        <div class="developer-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3>Lucky Martino</h3>
+                        <p class="developer-title">Developer</p>
+                    </div>
+                    <p class="about-text">
+                        This app has been developed by Lucky Martino. Thank you for your support and feedback. 
+                        Please feel free to contact on <a href="mailto:theatomizor@gmail.com">theatomizor@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-icons">
+            <button id="settingsBtn" class="footer-icon">
+                <i class="fas fa-cog"></i>
+            </button>
+            <button id="aboutBtn" class="footer-icon">
+                <i class="fas fa-info-circle"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

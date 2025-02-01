@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Teams - PickMe</title>
+    <link rel="icon" type="image/x-icon" href="pickMe.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body class="group-page">
+    <div id="particles-js"></div>
+    <div class="group-container">
+        <h1 class="title-animated">Create Your Teams</h1>
+        
+        <div class="group-content">
+            <section class="input-section">
+                <div class="members-input">
+                    <h2>Add Members</h2>
+                    <div class="input-methods">
+                        <div class="manual-input">
+                            <input type="text" id="memberName" class="styled-input" placeholder="Enter member name">
+                            <button id="addMember" class="action-button add-button">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Add Member</span>
+                            </button>
+                        </div>
+                        <div class="file-upload">
+                            <label for="fileUpload" class="action-button upload-button">
+                                <i class="fas fa-file-upload"></i>
+                                <span>Upload Excel/CSV</span>
+                            </label>
+                            <input type="file" id="fileUpload" accept=".xlsx,.xls,.csv" style="display: none;">
+                            <span id="fileInfo" class="file-info"></span>
+                            <button id="clearList" class="action-button clear-button">
+                                <i class="fas fa-trash"></i>
+                                <span>Clear List</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="members-list">
+                    <h2>Members List</h2>
+                    <div id="membersList" class="list-container"></div>
+                </div>
+
+                <div class="group-settings">
+                    <h2>Team Settings</h2>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <label for="groupBy">Team By</label>
+                            <select id="groupBy" class="styled-input">
+                                <option value="count">Number of Teams</option>
+                                <option value="size">Members per Team</option>
+                            </select>
+                        </div>
+                        <div class="setting-item group-count-setting">
+                            <label for="groupCount">Number of Teams</label>
+                            <input type="number" id="groupCount" class="styled-input" min="2" value="2">
+                        </div>
+                        <div class="setting-item group-size-setting" style="display: none;">
+                            <label for="groupSize">Members per Team</label>
+                            <input type="number" id="groupSize" class="styled-input" min="2" value="2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="action-buttons">
+                <button id="generateTeams" class="generate-button" disabled>
+                    <div class="button-content">
+                        <i class="fas fa-users"></i>
+                        <span>Generate Teams</span>
+                    </div>
+                </button>
+            </div>
+
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <h2>Generated Teams</h2>
+                <div id="teamsGrid" class="groups-grid"></div>
+                <div class="export-options">
+                    <div class="export-format">
+                        <label for="exportFormat">Export Format:</label>
+                        <select id="exportFormat" class="styled-input">
+                            <option value="pdf">PDF Document</option>
+                            <option value="excel">Excel Spreadsheet</option>
+                            <option value="csv">CSV File</option>
+                            <option value="text">Plain Text</option>
+                        </select>
+                    </div>
+                    <button id="exportResults" class="action-button export-button">
+                        <i class="fas fa-download"></i>
+                        <span>Export Results</span>
+                    </button>
+                    <button id="shareResults" class="action-button share-button">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Share Results</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="shareModal" class="modal">
+        <div class="modal-content">
+            <span id="closeShare" class="close">&times;</span>
+            <h2>Share Results</h2>
+            <div class="share-options">
+                <button class="share-option" data-platform="email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </button>
+                <button class="share-option" data-platform="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </button>
+                <button class="share-option" data-platform="facebook">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </button>
+                <button class="share-option" data-platform="twitter">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </button>
+                <button class="share-option" data-platform="linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </button>
+                <button class="share-option" data-platform="telegram">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram</span>
+                </button>
+                <button class="share-option" data-platform="copy">
+                    <i class="fas fa-copy"></i>
+                    <span>Copy Text</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="team.js"></script>
+</body>
+</html>
